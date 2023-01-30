@@ -1,3 +1,4 @@
 # cqf
 
-## Random Behaviour of Assets
+## Model 1
+- Random Behaviour of Assets
