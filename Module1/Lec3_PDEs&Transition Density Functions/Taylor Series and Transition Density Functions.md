@@ -8,7 +8,7 @@
 
 $p(y,t;y',t') $, the transition probability density function is defined by,
 
-$$ Prob(a<y'<b, \text{at time $t'$} | \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy'$$
+$$ Prob(a<y'<b, \text{at time $t'$}  \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy'$$
 
 In words this is “the probability that the random variable y ′ lies between a and b at time t ′ in the future, given that it started out with value y at time t.”
 
@@ -144,7 +144,7 @@ $$ -\frac{1}{2}f(\xi) - \frac{1}{2}\xi \frac{df}{d\xi} = c^2  \frac{d^2f}{d\xi^2
 
 $$ p=\frac{1}{\sqrt{t'}} f(\frac{y'}{\sqrt{t'}})  = \frac{1}{\sqrt{t'}}f(\xi)$$
 
-$$ \xi = \frac{y'}{\sqrt{t'}}$$.
+$$ \xi = \frac{y'}{\sqrt{t'}}$$
 
 The forward Kolmogorov equation becomes,
 
