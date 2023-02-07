@@ -8,7 +8,7 @@
 
 $p(y,t;y',t') $, the transition probability density function is defined by,
 
-$$ Prob(a<y'<b, \text{at time $t'$}  \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy'$$
+$$ Prob(a<y'<b, \text{at time t'}|  \text{y at time t}) = \int_a^b p(y,t;y',t')  dy'$$
 
 In words this is “the probability that the random variable y ′ lies between a and b at time t ′ in the future, given that it started out with value y at time t.”
 
