@@ -8,7 +8,7 @@
 
 $p(y,t;y',t') $, the transition probability density function is defined by,
 
-$$ Prob(a<y'<b, \text{at time $t'$} | \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy' $$
+$$ Prob(a<y'<b, \text{at time $t'$} | \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy'$$
 
 In words this is “the probability that the random variable y ′ lies between a and b at time t ′ in the future, given that it started out with value y at time t.”
 
@@ -16,7 +16,7 @@ Think of y and t as being current values with y ′ and t ′ being future value
 
 “What is the probability of the variable y ′ being in a speciﬁed range at time t ′ in the future given that it started out with value y at time t?”
 
-- ***Our Goal is to find the transition probability p.d.f., and so we find the relationship between $ p(y,t;y',t') $, and $ p(y,t;y',t'-\delta t) $,*** 
+***Our Goal is to find the transition probability p.d.f., and so we find the relationship between $ p(y,t;y',t') $, and $ p(y,t;y',t'-\delta t) $,*** 
 
 ## 3. From the Trinomial model to the Transition Probability Density function
 
@@ -34,9 +34,9 @@ The probability of being at $y'$ at time $t'$ is related to the probabilities of
 
 $$  p(y,t;y',t') = \alpha \ p(y,t;y'+\delta y,t'-\delta t) + \\ (1-2\alpha) \ p(y,t;y',t'-\delta t) + \alpha \ p(y,t;y'-\delta y,t'-\delta t) $$
 
-- <u>***Given $\{y,t\}$, we find relationship between $\{y',t'\}$ and $\{y'\pm \delta y,t'-\delta t\}$ that is y' and t' a bit time previously.***</u>
+***Given $\{y,t\}$, we find relationship between $\{y',t'\}$ and $\{y'\pm \delta y,t'-\delta t\}$ that is y' and t' a bit time previously.***
 
-- *<u>**Remember, our goal is to find a solution of $p(.)$, we try to solve the above equation.**</u>*
+***Remember, our goal is to find a solution of $p(.)$, we try to solve the above equation.***
 
 ### 3.2 Taylor Series Expansion
 
@@ -44,7 +44,7 @@ We expand each term of the **equation**.
 
 $$  p(y,t;y',t') = \alpha \ p(y,t;y'+\delta y,t'-\delta t) + \\ (1-2\alpha) \ p(y,t;y',t'-\delta t) + \alpha \ p(y,t;y'-\delta y,t'-\delta t) $$
 
-- ***<u>Why we do that? Because there are too many variables in it, hard to solve it. We have to reduce the dimension.</u>***
+***Why we do that? Because there are too many variables in it, hard to solve it. We have to reduce the dimension.***
 
 $$  p(y,t;y'+\delta y,t'-\delta t)\approx  \\ p(y,t;y',t) - \delta t \frac{\partial p}{\partial t'} +\delta y \frac{\partial p}{\partial y'} + \frac{1}{2}\delta y^2 \frac{\partial^2 p}{\partial y'^2} + O(\frac{\partial^2 p}{\partial t'^2}) $$
 
@@ -68,7 +68,7 @@ $$  \frac{\partial p}{\partial t'} =c^2 \frac{\partial^2 p}{\partial y'^2} $$
 
 The above equation is also named **Fokker–Planck** or **forward Kolmogorov equation.**
 
-- ***<u>Now, we have a partial differential equation. Solve it, we can get the form of $p$.</u>***
+***Now, we have a partial differential equation. Solve it, we can get the form of $p$.***
 
 ### 3.3 Backward Equation works similar.
 
@@ -190,5 +190,5 @@ $p(.)$ now is normal like distributed.
 
 $$N(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
-So, we may say $\mu_{y'}=0$, and $\sigma^2_{y'}=2c^2t'$. Or, $y' \sim N(0, 2c^2t')$
+So, we may say $\mu_{y'}=0$, and $\sigma^2_{y'}=2c^2t'$. Or, $y' \sim N(0, 2c^2t')$.
 
