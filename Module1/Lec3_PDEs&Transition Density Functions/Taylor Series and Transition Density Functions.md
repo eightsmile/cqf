@@ -2,11 +2,11 @@
 
 ## 1. Trinomial Random Walk
 
-<img src="/Users/mie/Library/Application Support/typora-user-images/Screenshot 2023-02-07 at 12.21.20.png" alt="Screenshot 2023-02-07 at 12.21.20" style="zoom:33%;" />
+<img src="/Users/meowmeow/Documents/GitHub/cqf/Module1/Lec3_PDEs&Transition Density Functions/TrinomialTree.png" alt="TrinomialTree" style="zoom:33%;" />
 
 ## 2. Transition Probability Density Function
 
-$$ p(y,t;y',t') $$, the transition probability density function is defined by,
+$p(y,t;y',t') $, the transition probability density function is defined by,
 
 $$ Prob(a<y'<b, \text{at time $t'$} | \text{$y$ at time $t$}) = \int_a^b p(y,t;y',t') \  dy' $$
 
@@ -16,7 +16,7 @@ Think of y and t as being current values with y ′ and t ′ being future value
 
 “What is the probability of the variable y ′ being in a speciﬁed range at time t ′ in the future given that it started out with value y at time t?”
 
-***<u>Our Goal is to find the transition probability p.d.f., and so we find the relationship between $$ p(y,t;y',t') $$, and $$ p(y,t;y',t'-\delta t) $$,</u>*** 
+- ***Our Goal is to find the transition probability p.d.f., and so we find the relationship between $ p(y,t;y',t') $, and $ p(y,t;y',t'-\delta t) $,*** 
 
 ## 3. From the Trinomial model to the Transition Probability Density function
 
@@ -26,7 +26,7 @@ We are going to assume that the probability of a rise and a fall are both the sa
 
 ### 3.1 The Forward Equation
 
-<img src="/Users/mie/Library/Application Support/typora-user-images/Screenshot 2023-02-07 at 12.34.38.png" alt="Screenshot 2023-02-07 at 12.34.38" style="zoom:33%;" />
+<img src="/Users/meowmeow/Documents/GitHub/cqf/Module1/Lec3_PDEs&Transition Density Functions/ForwardEq.png" alt="ForwardEq" style="zoom:33%;" />
 
 Given $\{y,t\}$, or says $\{y,t\}$ the current and previous. $\{y',t'\}$ are variate in the future time.
 
@@ -172,8 +172,23 @@ Take exponential, $ f(\xi) = e^C e^{-\frac{\xi^2}{4c^2}} =  A e^{-\frac{\xi^2}{4
 
 #### Find $A$
 
-The Last Step here is to find the exact value of $A$. To find that, we need to use the property of p.d.f..
+The Last Step here is to find the exact value of $A$. $A$ is chosen such that the integral of $f$ is one.
 
-Plug $f(\xi), a, b$ back into $p = t^a f(\xi)$.
+$$\int_{\mathbb{R}}f(\xi)\ d\xi =1$$
 
-$$ p(\xi)=\frac{A}{\sqrt{t'}}e^{-\frac{\xi^2}{4c^2}} $$
+$$ \int_{\mathbb{R}}A e^{-\frac{\xi^2}{4c^2}} \ d\xi = 2cA\int_{\mathbb{R}} e^{-\frac{\xi^2}{4c^2}} \ d\big(\frac{\xi}{2c}\big) =1 $$
+
+$$ 2cA \sqrt{\pi} = 1 $$
+
+, so we get $A = \frac{1}{2c\sqrt{\pi}}$
+
+Plug $f(\xi), a, b, A$ back into $p = t^a f(\xi)$.
+
+$$ p(y')=\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{\xi^2}{4c^2}} =\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{y'^2}{4c^2t'}} $$
+
+$p(.)$ now is normal like distributed.
+
+$$N(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+So, we may say $\mu_{y'}=0$, and $\sigma^2_{y'}=2c^2t'$. Or, $y' \sim N(0, 2c^2t')$
+
