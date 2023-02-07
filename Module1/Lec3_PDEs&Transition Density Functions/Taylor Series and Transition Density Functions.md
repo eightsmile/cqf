@@ -2,7 +2,7 @@
 
 ## 1. Trinomial Random Walk
 
-<img src="/Users/meowmeow/Documents/GitHub/cqf/Module1/Lec3_PDEs&Transition Density Functions/TrinomialTree.png" alt="TrinomialTree" style="zoom:33%;" />
+<img src="cqf/Module1/Lec3_PDEs&Transition Density Functions/TrinomialTree.png" alt="TrinomialTree" style="zoom:33%;" />
 
 ## 2. Transition Probability Density Function
 
