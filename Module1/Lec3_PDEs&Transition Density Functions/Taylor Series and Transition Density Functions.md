@@ -92,7 +92,7 @@ $$ p=t'^a f(\frac{y'}{t'^b})  = t'^a f(\xi)$$
 
 $$ \xi = \frac{y'}{t'^b}$$
 
-, where `a`, and `b` are indefinite variables.
+, where $a$, and $b$ are indefinite variables.
 
 Again, don't ask why it is in this form, because it is a **special** solution!
 
@@ -168,7 +168,7 @@ $$ -\frac{1}{2c^2}\xi d\xi = \frac{1}{f(\xi)}df $$
 
 $$ ln\ f(\xi) =  -\frac{\xi^2}{4c^2} + C$$
 
-Take exponential, $ f(\xi) = e^C e^{-\frac{\xi^2}{4c^2}} =  A e^{-\frac{\xi^2}{4c^2}} $.
+Take exponential, $f(\xi) = e^C e^{-\frac{\xi^2}{4c^2}} =  A e^{-\frac{\xi^2}{4c^2}}$ .
 
 #### Find $A$
 
