@@ -6,7 +6,7 @@
 
 ## 2. Transition Probability Density Function
 
-$p(y,t;y',t') $, the transition probability density function is defined by,
+The transition probability density function, $p(y,t;y',t') $,  is defined by,
 
 $$ Prob(a<y'<b, at\ time \ t' | y \ at \ time\ t) = \int_a^b p(yet;y',t')dy'$$
 
