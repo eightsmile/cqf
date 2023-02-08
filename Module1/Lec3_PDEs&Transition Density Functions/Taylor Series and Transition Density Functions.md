@@ -2,7 +2,7 @@
 
 ## 1. Trinomial Random Walk
 
-<img src="cqf/Module1/Lec3_PDEs&Transition Density Functions/TrinomialTree.png" alt="TrinomialTree" style="zoom:33%;" />
+<img src="https://github.com/eightsmile/cqf/blob/main/Module1/Lec3_PDEs%26Transition%20Density%20Functions/TrinomialTree.png" alt="TrinomialTree" style="zoom:33%;" />
 
 ## 2. Transition Probability Density Function
 
@@ -26,7 +26,7 @@ We are going to assume that the probability of a rise and a fall are both the sa
 
 ### 3.1 The Forward Equation
 
-<img src="/Users/meowmeow/Documents/GitHub/cqf/Module1/Lec3_PDEs&Transition Density Functions/ForwardEq.png" alt="ForwardEq" style="zoom:33%;" />
+<img src="https://github.com/eightsmile/cqf/blob/main/Module1/Lec3_PDEs%26Transition%20Density%20Functions/ForwardEq.png" alt="ForwardEq" style="zoom:33%;" />
 
 Given $\{y,t\}$, or says $\{y,t\}$ the current and previous. $\{y',t'\}$ are variate in the future time.
 
