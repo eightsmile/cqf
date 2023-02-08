@@ -8,7 +8,7 @@
 
 $p(y,t;y',t') $, the transition probability density function is defined by,
 
-$$ Prob(a<y'<b, \text{at time t'}|  \text{y at time t}) = \int_a^b p(y,t;y',t')  dy'$$
+$$ Prob(a<y'<b, at\ time \ t' | y \ at \ time\ t) = \int_a^b p(yet;y',t')dy'$$
 
 In words this is “the probability that the random variable y ′ lies between a and b at time t ′ in the future, given that it started out with value y at time t.”
 
@@ -135,6 +135,8 @@ $$ \int_{\mathbb{R}} t'^a f(\frac{y'}{\sqrt{t'}})\ dy'  =  1 $$
 $$ \int_{\mathbb{R}} t'^{a+1/2} f(x)\ dx  =t'^{a+1/2} \int_{\mathbb{R}}  f(x)\ dx=  1 $$
 
 $t'$ is independent, so the above equation would be equal to '1' regardless the power of $t'$. Thus, $a = -\frac{1}{2}$ for sure.
+
+Also, we get $\int_{\mathbb{R}}  f(x)\ dx=  1 $.
 
 #### 4.5 Integrate! Solve it!
 
