@@ -138,7 +138,7 @@ $t'$ is independent, so the above equation would be equal to '1' regardless the 
 
 Also, we get $\int_{\mathbb{R}}  f(x)\ dx=  1 $.
 
-#### 4.5 Integrate! Solve it!
+### 4.5 Integrate! Solve it!
 
 By assuming the special form of $p$, and letting $a=-1/2$, $b=1/2$, we get,
 
@@ -193,4 +193,16 @@ $p(.)$ now is normal like distributed.
 $$N(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
 So, we may say $\mu_{y'}=0$, and $\sigma^2_{y'}=2c^2t'$. Or, $y' \sim N(0, 2c^2t')$.
+
+## 5. Summary
+
+ $$p(y')=\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{\xi^2}{4c^2}} =\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{y'^2}{4c^2t'}} $$
+
+**Finally, we solved the transition probability density function $p(.)$**. By assuming the forward or backward type of trinomial model, we find a partial differential relationship. Then, assuming a special form of $p(.)$ by similarity method, we solve it. 
+
+The meaning is that $p(y')=\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{\xi^2}{4c^2}} =\frac{1}{2c\sqrt{\pi \ t'}}e^{-\frac{y'^2}{4c^2t'}} $ is one of the transition probability density function that can satisfy the trinomial random walk.
+
+Also, we find that $p(.)$ is normally liked distributed.
+
+
 
