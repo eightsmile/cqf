@@ -17,7 +17,7 @@ $$ E(r-r_f) = \bigg[(\tau \Sigma)^{-1} + P^T \Omega^{-1}P\bigg]^{-1} \bigg[(\tau
 - $\tau$ is a scalar, as the Black and Litterman assume the varianace is proportional to the variances?.
 - $\Sigma$ is the variance-corvariance matrix for all assets under consideration.
 - $\Omega$ the Uncertainty surrounding your views.
-- $\Pi$ is the **Implied Excess Retruns**.
+- $\Pi$ is the **Implied Excess Returns**.
 - $Q$ is the Views on Expected Excess Return for some or all assets.
 - $P$ is a Matrix identifying which assets you have views about.
 
@@ -35,7 +35,7 @@ $$(\tau \Sigma)^{-1}\Pi + P^T \Omega^{-1}Q$$
 
 The, for the **first temr** (the denominator),
 
-- The first term is there to ensure that the weights assigned to apploed **excess returns** and **our views** are up to 1.
+- The first term is there to ensure that the weights assigned to applied **excess returns** and **our views** are up to 1.
 
 **In other words,** the whole equation is like a weighted average. For example, 
 
@@ -145,6 +145,16 @@ $$P(E|I) \sim N\Bigg(\bigg[ (\tau \Sigma)^{-1} + P^T \Omega^{-1}P \bigg]^{-1}\bi
 Thus, the result of Black-Litterman Formula is, (the excess return given analyst's view, I)
 
 $$\hat{R}_I:= E(r-r_f|I) = \bigg[ (\tau \Sigma)^{-1} + P^T \Omega^{-1}P \bigg]^{-1}\bigg[ (\tau \Sigma)^{-1}\Pi + P^T \Omega^{-1}Q \bigg]$$
+
+## Asset Allocation - $w^*$
+
+Recall our optimisation problem,
+
+$$U = w^TR - \frac{1}{2}\lambda w^T\Sigma w$$
+
+$$w^* = \frac{1}{\lambda} \Sigma^{-1}\hat{R_I}$$
+
+, where we plug into our Black-Litterman result, and get the very end result.
 
 ## Application Example (3 Assets)
 
