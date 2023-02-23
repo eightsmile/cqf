@@ -9,3 +9,9 @@ Welcome to visit my site: https://eightsmilefy.com/?cat=26
 - Lec4 - Applied Stochastic Calculus I
 - Lec5 - Applied Stochastic Calculus II
 - Lec6 - Martingales
+
+## Module 2 - Sebastien
+
+- Lec1 - An Intro of Portfolio Theory
+- Lec2 - Fundamentals of Optimisation and Application, Black-Litterman Model
+
