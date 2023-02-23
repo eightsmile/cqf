@@ -255,3 +255,6 @@ $$ E(r-r_f) = \bigg[(\tau \Sigma)^{-1} + \mathbb{P}^T \Omega^{-1}\mathbb{P}\bigg
 - Implication: https://youtu.be/lIhGv1oYS8U
 - Example in Excel: https://youtu.be/RGw2qYWPigA
 - Derivation: https://youtu.be/hnSphrrpCiQ
+- An Extremely Helpful Notes: https://www.princeton.edu/~markus/teaching/Eco467/06Lecture/06_Portfolio%20Theory%20CAPM.pdf (attached in the folder already)
+- Original Paper: Jay Walters 2014
+
