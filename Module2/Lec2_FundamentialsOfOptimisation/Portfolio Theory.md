@@ -1,6 +1,4 @@
-# CML
-
-We are facing the problem that minimise variances subject to a constraint for returns.
+# Portfolio Theory
 
 Now, we try to show the Effective Frontier in the matrix representations.
 
@@ -123,6 +121,7 @@ $$m^* = \frac{C- r_fB}{B-r_fA }$$
 
 $$w^*_r = \frac{\Sigma^{-1}(\mu - r_f \mathbb{1})}{B-r_fA}$$
 
-## A Good Note
 
-[https://www.princeton.edu/~markus/teaching/Eco467/06Lecture/06_Portfolio%20Theory%20CAPM.pdf](https://www.princeton.edu/~markus/teaching/Eco467/06Lecture/06_Portfolio Theory CAPM.pdf)
+
+
+
