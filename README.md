@@ -14,9 +14,11 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec5 - Applied Stochastic Calculus II
 - Lec6 - Martingales
 
-## Module 2 - Sebastien
+## Module 2 - Sebastien & Stuart Jackman & Stephen Taylor
 
 - Lec1 - An Intro of Portfolio Theory
 - Lec2 - Fundamentals of Optimisation and Application, Black-Litterman Model
 - Lec3 - Value at Risks and Expected Shortfalls
+- Lec4 - Asset Returns: Key Imperial Stylised Facts
+- Lec5 - Volatility Models: The ARCH Framework
 
