@@ -149,10 +149,10 @@ The Loss distribution becomes the same normal distribution with x-axis reversed.
 
 - Volatility of Loss: $\sigma(L(x)) = \sigma_x$, the minus does not matter in the s.d.
 - Standard Deviation-based risk measure: $=\mathbb{E}(L(x)) + cz_{c}\sigma(L(x))  $, x-axis is revered, so $z_{1-c}$ for return becomes $z_c$ for loss.
-- VaR: $VaR_{\alpha}(x)=inf\bigg\{ \mathscr{l}:Prob\big[ L(x)\leq \mathscr{l} \geq\big]  \alpha \bigg\}$
+- VaR: $VaR_{\alpha}(x)=inf\bigg\{ \mathscr{l}:Prob\big[ L(x)\leq \mathscr{l} \big] \geq \alpha \bigg\}$
 - Expected Shortfall: $ES_{\alpha}(x) = \frac{1}{1-\alpha} \int_{\alpha}^1 VaR_u(x) du$. In other form, $ES_{\alpha}(x)=\mathbb{E}\bigg( L(x)| L(x)\geq VaR_{\alpha}(x) \bigg)$
 
 As $R \sim N(\mu, \Sigma)$, 
 
-- for our portfolio with weights $x$, $mean = \mu$, and $\sigma_x = \sqrt{x^T \Sigma x}$.
-- for the loss, $mean = -\mu$, and $\sigma_x = \sqrt{x^T \Sigma x}$.
+- for our portfolio with weights $x$, $mean = \mu$, and $\sigma_x = \sqrt{x^T \Sigma x}$
+- for the loss, $mean = -\mu$, and $\sigma_x = \sqrt{x^T \Sigma x}$
