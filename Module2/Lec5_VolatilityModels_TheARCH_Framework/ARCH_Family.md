@@ -1,4 +1,4 @@
-# GARCH
+# ARCH
 
 ## 1. Some Facts
 
