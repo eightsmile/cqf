@@ -90,7 +90,7 @@ Thus,
 
 $$ ES_c(X) =\mu - \frac{\sigma}{\Phi(VaR)}  \phi(VaR)=\mu -\sigma \frac{\phi\big( \Phi^{-1}(1-c) \big)}{1-c}$$
 
-### VaR Form
+### VaR Form 4
 
 we 'sum up' (integrate) the VaR from $c$ to $1$, conditional on $1-c$.
 
@@ -113,7 +113,9 @@ As $1-\Phi(z) = \Phi(-z)$
 
 $$  ES_c(X)  =\mu + \frac{\sigma}{1-c} \int^{\infty}_{z_c}   \Phi^{-1}(\Phi(-z))\phi(z)  dz = \mu - \frac{\sigma}{1-c} \int^{\infty}_{z_c}    z\phi(z)  dz  $$
 
-$ \int_{z_c}^{\infty} z \phi(z)dz = \int_{z_c}^{\infty} z \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}dz  = -\frac{1}{\sqrt{2\pi}} \int_{z_c}^{\infty} -e^{\frac{z^2}{2}}d(e^{-\frac{z^2}{2}})$
+$ \int_{z_c}^{\infty} z \phi(z)dz = \int_{z_c}^{\infty} z \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}dz  = -\frac{1}{\sqrt{2\pi}} \int_{z_c}^{\infty} e^{\frac{-z^2}{2}}d(e^{-\frac{z^2}{2}})$
+
+$=-\frac{1}{\sqrt{2 \pi}}e^{\frac{-z^2}{2}}|_{z_c}^{\infty}$
 
 $=\frac{1}{\sqrt{2\pi}}e^{-\frac{z_c^2}{2}}=\phi(z_c)=\phi\big(\Phi^{-1}(c)\big)$, bring it back to $ES_c(X)$
 

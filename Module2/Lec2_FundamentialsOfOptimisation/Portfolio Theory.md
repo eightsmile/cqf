@@ -22,7 +22,9 @@ we get three equations and three unknowns.
 
 Solve it, we get,
 
-$$w^* = \frac{1}{AC-B^2}\Sigma^{-1}\bigg( (A\mu - B\mathbb{1})m + (C\mathbb{1}-B\mu) \bigg)$$
+$$w^* = \frac{1}{AC-B^2}\Sigma^{-1}\bigg(  (C-Bm)\vec{\mathbb{1}}+(Am-B)\mu \bigg)$$
+
+$$w^* = \frac{1}{AC-B^2}\Sigma^{-1}\bigg( (A\mu - \vec{\mathbb{1}}B)m + (\vec{\mathbb{1}}C-B\mu) \bigg)$$
 
 where, 
 - $A = \mathbb{1}^T \Sigma^{-1} \mathbb{1}$
