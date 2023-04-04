@@ -21,4 +21,17 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec3 - Value at Risks and Expected Shortfalls
 - Lec4 - Asset Returns: Key Imperial Stylised Facts
 - Lec5 - Volatility Models: The ARCH Framework
+- Lec6 - Risk Regulation & Basel III
+- Lec7 - Collateral and Margins 
 
+## Module 3 - Sebastien & Riaz & Paul & Espen
+
+- Lec1 - Black Scholes Model
+- Lec2 - Martingales Theory - Applications to Option Pricing
+- Lec3 - Martingales & PDEs: Which, When & Why
+- Lec4 - Intro to Numerical Methods
+- Lec5 - Exotic Options
+- Lec6 - Understanding Volatility
+- Lec7 - Further Numerical Methods
+- Lec8 - Derivatives Market Practice
+- Lec9 - Advanced Greeks
