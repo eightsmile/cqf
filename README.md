@@ -35,3 +35,11 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec7 - Further Numerical Methods
 - Lec8 - Derivatives Market Practice
 - Lec9 - Advanced Greeks
+- Lec10 - Advanced Volatility Modelling
+- Lec11 - FX Options
+
+## Module 4 - Paul & Panos
+
+- Lec1 - An Introduction to Machine Learning I
+- Lec2 - An Introduction to Machine Learning II
+- Lec3 - Maths Toolbox for Machine Learning
