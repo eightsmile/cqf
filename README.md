@@ -43,3 +43,6 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec1 - An Introduction to Machine Learning I
 - Lec2 - An Introduction to Machine Learning II
 - Lec3 - Maths Toolbox for Machine Learning
+
+Sorry about the lag of updating. I am preparing a CFA exam, and will catch up the update of CQF repo by the end of May.
+Highly recommend a book 'DeelLearningFromScrach' for ML & DeepLearning btw.
