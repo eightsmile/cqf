@@ -38,11 +38,23 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec10 - Advanced Volatility Modelling
 - Lec11 - FX Options
 
-## Module 4 - Paul & Panos
+## Module 4 - Paul, Panos & Kannan
 
 - Lec1 - An Introduction to Machine Learning I
 - Lec2 - An Introduction to Machine Learning II
 - Lec3 - Maths Toolbox for Machine Learning
+- Lec4 - Supervised Learning I
+- Lec5 - Supervised Learning II
+- Lec6 - Decision Tree & Ensemble Learning
 
-Sorry about the lag of updating. I am preparing a CFA exam, and will catch up the update of CQF repo by the end of May.
-Highly recommend a book 'DeelLearningFromScrach' for ML & DeepLearning btw.
+## Module 5 - Panos, Kannan
+
+- Lec1 - Unsupervised Learning I
+- Lec2 - Unsupervised Learning II 
+- Lec3 - Deep Learning & Neural Networks
+- Lec4 - Natural Language Processing
+- Lec5 - Reinforcement Learning I
+- Lec6 - Reinforcement Learning II
+- Lec7 - AI Based Algo Trading Strategies
+- Lec8 - Practical Machine Learning Case Studies for Finance
+- Lec9 - Quantum Computing
