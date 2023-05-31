@@ -1,0 +1,58 @@
+# CODE 4.4 GBM PATH MC SAMPLING
+import math
+import scipy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+
+# STEP 1: INPUTS
+S0, T, vol, r = 1, 1, 0.40, 0.1 # GBM parameters
+M = 1000 # MC simulations
+N = 100 # MC timesteps
+dt = T / N
+S = np.zeros((N+1,M+1))
+ST=np.zeros(M)
+
+# STEP 2: Lognormal analytical 
+mu = ((r - 0.5 * vol**2) * T + np.log(S0))
+sigma = vol * np.sqrt(T)
+exact_mean = np.exp(mu + sigma**2/2)
+
+# STEP 3: MC simulate GBM trajectories
+for j in range(M):
+    S[0,j]=S0
+    for i in range(N):
+        epsilon =  sp.random.randn(1)
+        S[i+1,j] = S[i,j]*(1+r*dt+vol*math.sqrt(dt)*epsilon)
+    ST[j]=S[i+1,j]
+
+# STEP 4: Plot GBM trajectories
+t = np.linspace(0,1,N+1)
+plt.plot(t,S[:,1:50],alpha=0.6)
+plt.hlines(1, 0, 1.05*T, linestyle="dashed")
+plt.axis('tight')
+plt.show()
+
+# STEP 5: Plot Histogram of S at maturity T
+count, bins, ignored = plt.hist(ST, 50, density=True, align='mid')
+
+# superimpose analytical lognormal 
+x = np.linspace(0.1,4,50)
+pdf = (np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))
+       / (x * sigma * np.sqrt(2 * np.pi)))
+plt.plot(x, pdf, linewidth=2, color='r')
+plt.vlines(exact_mean, 0, 1.5*np.max(pdf), linestyle="dashed")
+plt.axis('tight')
+plt.show()
+
+# STEP 6: Print numerical values
+print('___________ parameters ___________')
+print('S0=',S0,' vol=',vol,' r=',r,' T=',T)
+print('N = ', N, ' M = ',M)
+print('mu = ',mu, ' sigma = ',sigma)
+print(' ')
+print('____________ results _____________')
+print('Exact_mean      = ',exact_mean)
+print('MC_sample_mean  = ',np.mean(ST))
+print('__________________________________')
+
+

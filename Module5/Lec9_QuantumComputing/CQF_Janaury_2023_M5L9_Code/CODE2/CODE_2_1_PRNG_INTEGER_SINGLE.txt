@@ -1,0 +1,12 @@
+
+# CODE_2_1_PRNG_INTEGER
+# single integer sample between 1 and 128
+# import the random module 
+import random as rn
+rn.seed(123) # set seed of random sequence to 123
+# using the randomint() method obtain five samples
+print(rn.randint(1,128)) 
+print(rn.randint(1,128)) 
+print(rn.randint(1,128)) 
+print(rn.randint(1,128)) 
+print(rn.randint(1,128)) 

@@ -1,0 +1,57 @@
+# CODE_3_5_QUANTUM_MONTECARLO_PI_ESTIMATE
+
+# import the required libraries  
+import matplotlib.pyplot as plt
+import numpy as np
+import math as m
+
+def uniform_8bits():
+    import numpy as np
+    from scipy.stats import norm
+    from qiskit import QuantumCircuit, execute, Aer, IBMQ
+    num_bits = 8
+    num_samples = 1
+    num_shots = num_bits * num_samples
+    qcircuit = QuantumCircuit(1,1)
+    qcircuit.h(0)
+    qcircuit.measure([0],[0])
+    backend = Aer.get_backend('qasm_simulator')
+    result = execute(qcircuit, backend, shots=num_shots, memory = True).result()
+    counts = result.get_counts(qcircuit)
+    shotlist = result.get_memory()
+    a = shotlist
+    b=''.join(a)
+    c = int(str(b),2)
+    out_int=c
+    out_uniform=out_int/256 
+    result = out_uniform
+    return result
+
+
+N = 100 # number of simulations
+count = 0 # initialize number of samples inside circle quadrant
+x_vector = np.zeros(N)
+y_vector = np.zeros(N)
+r_vector = np.zeros(N)
+
+# Step 1: generate random scenarios
+for i in range(N):
+    x_vector[i] = uniform_8bits()
+    y_vector[i] = uniform_8bits()
+
+# Step 2: operations on each scenario
+for i in range(N):
+    r_vector[i] = m.sqrt(x_vector[i] ** 2 + y_vector[i] ** 2)
+    if r_vector[i]<1: count=count+1
+
+# Step 3: calculate output estimates
+
+# plot individual radii (first 100)
+print(r_vector[0:100]) 
+plt.plot(r_vector[0:100])
+plt.show() 
+
+#estimate pi
+pi_approx = 4 * count / N  
+print(pi_approx)
+

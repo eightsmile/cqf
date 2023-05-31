@@ -1,0 +1,66 @@
+# CODE 4.5 COMPOSED WITH IDENTITY
+import math
+import scipy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Step  1: INPUTS
+S0, T, vol, r = 2, 1, 0.40, 0.1 # GBM parameters
+M = 1000 # MC simulations
+N = 100 # MC timesteps
+dt = T / N
+S = np.zeros((N+1,M+1))
+ST=np.zeros(M)
+H=np.zeros(M)
+
+# Step 2: H(y) function for payoff (target)   
+def H(y):
+    target = y # in this case is simple identity
+    return target
+
+# Step 3: Lognormal
+mu = ((r - 0.5 * vol**2) * T + np.log(S0))
+sigma = vol * np.sqrt(T)
+exact_mean = np.exp(mu + sigma**2/2)
+
+# Step 4: Simulate GBM trajectories
+for j in range(M):
+    S[0,j]=S0
+    for i in range(N):
+        epsilon =  sp.random.randn(1)
+        S[i+1,j] = S[i,j]*(1+r*dt+vol*math.sqrt(dt)*epsilon)
+    ST[j]=S[i+1,j]
+mean_H = np.mean(H(ST))
+    
+# Step 5: plots
+
+# input histogram F: uncertainty model (probability)
+plt.hist(ST, 50, density=True, align='mid')
+
+# target function (payoff) G:
+x = np.linspace(0.1,4,50)
+plt.plot(x, H(x), linewidth=2, color='r')
+plt.axis('tight')
+plt.axis('square')
+plt.xlim(0, 4)
+plt.ylim(0, 4)
+
+# output histogram H: 
+plt.hist(H(ST), 50, density=True, align='mid', orientation='horizontal')
+
+plt.vlines(exact_mean, 0, 3, linestyle="dashed")
+plt.hlines(mean_H, 0, 3, linestyle="dashed")
+plt.xlabel('F: input distribution')
+plt.ylabel('H: output distribution')
+plt.show()
+
+# Step 6: print results
+print('___________ parameters ___________')
+print('S0=',S0,' vol=',vol,' r=',r,' T=',T)
+print('N = ', N, ' M = ',M)
+print('mu = ',mu, ' sigma = ',sigma)
+print(' ')
+print('____________ results _____________')
+print('Exact mean LOGNORMAL =',exact_mean)
+print('MC estimate E[H(ST)] =',mean_H )
+print('__________________________________')

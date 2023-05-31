@@ -1,0 +1,27 @@
+
+# CODE_2_2_PRNG_INTEGER_MUTIPLE
+# vector integer samples
+# import the required libraries  
+import random as rn
+import matplotlib.pyplot as plt  
+import numpy as np
+
+rn.seed(123) # set seed of random sequence to 12345
+num_samples = 1000
+out_integer = np.zeros(num_samples)
+
+# generate vector random numbers
+for k in range(num_samples):
+    out_integer[k]=rn.randint(1,128)
+
+# output individual samples (first 100)
+print(out_integer[0:100]) 
+
+# generate PLOT 
+plt.plot(out_integer)
+plt.show() 
+
+# generate HISTOGRAM
+plt.hist(out_integer, bins = 10) 
+plt.show()
+

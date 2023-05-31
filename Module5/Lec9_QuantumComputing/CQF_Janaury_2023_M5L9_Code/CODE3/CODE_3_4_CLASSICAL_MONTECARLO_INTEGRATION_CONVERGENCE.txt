@@ -1,0 +1,50 @@
+# CODE_3_4_CLASSICAL_MONTECARLO_INTEGRATION_CONVERGENCE
+
+
+def classical_mc_integration(N):
+
+    # import the required libraries  
+    import matplotlib.pyplot as plt
+    import random as rn
+    import numpy as np
+    import math as m
+
+    # INPUTS
+    rn.seed(12345) # set seed of random sequence to 12345
+    a = -2 # start integration interval
+    b = +5 # end integration interval
+    x_vector = np.zeros(N)
+    f_vector = np.zeros(N)
+
+    def f_integrand(x):
+        result = -pow(x,3) + 5*pow(x,2) - x + 17 # function to integrate
+        return result
+
+    # Step 1: generate random scenarios in [a,b]
+    for i in range(N):
+        x_vector[i] = (b-a)*rn.random() + a
+
+    # Step 2: operations on each scenario
+    for i in range(N):
+        f_vector[i] = f_integrand(x_vector[i])
+
+    # Step 3: calculate output estimates
+    integral_estimate = (b-a)/N*sum(f_vector)
+
+    return integral_estimate
+
+
+
+# import the required libraries  
+import matplotlib.pyplot as plt
+import numpy as np
+
+# TEST: compute estimates with increasing number scenarios
+integral_vector = np.zeros(6)
+for i in range(6):
+    integral_vector[i]=classical_mc_integration(pow(10,i))
+    print(pow(10,i), " :  ", integral_vector[i])
+
+# PLOT: draw convergence plot
+plt.plot(integral_vector)
+plt.show() 

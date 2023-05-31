@@ -1,0 +1,106 @@
+# CODE 4_10 QAE for mean LOGNORMAL
+import matplotlib.pyplot as plt
+import numpy as np
+from qiskit import Aer, QuantumCircuit
+from qiskit.aqua.algorithms import IterativeAmplitudeEstimation
+from qiskit.circuit.library import LogNormalDistribution, LinearAmplitudeFunction
+
+### Step 1: INPUTS
+
+# number of qubits to represent the uncertainty model (LOGNORMAL)
+num_uncertainty_qubits = 5
+num_shots = 100
+S0, T, vol, r = 1, 1, 0.30, 0.1 # GBM parameters
+
+# resulting parameters for LOGNORMAL 
+mu = ((r - 0.5 * vol**2) * T + np.log(S0))
+sigma = vol * np.sqrt(T)
+mean = np.exp(mu + sigma**2/2)
+variance = (np.exp(sigma**2) - 1) * np.exp(2*mu + sigma**2)
+stddev = np.sqrt(variance)
+
+# lowest and highest value considered for the spot price
+low, high = 0.0, 2.0
+
+
+### Step 2: PROCESS
+
+# 2.1 Uncertainty Model Lognormal QISKIT  
+uncertainty_model = LogNormalDistribution(num_uncertainty_qubits, mu=mu, sigma=sigma**2, bounds=(low, high))
+
+# compute numerical expected value
+num_exact_value = np.dot(uncertainty_model.probabilities, uncertainty_model.values)
+
+# 2.2 Payoff linear function in QISKIT
+
+# parameters  
+c_approx = 0.25 # scale factor
+breakpoints = [low]
+slopes = [1]
+offsets = [0]
+f_min = low
+f_max = high
+
+# quantum circuit for linear function 
+linear_mapping_objective = LinearAmplitudeFunction(
+    num_uncertainty_qubits, 
+    slope=slopes,
+    offset=offsets,
+    domain=(low, high),
+    image=(f_min, f_max),
+    breakpoints=breakpoints,
+    rescaling_factor=c_approx
+)
+
+# 2.3  Circuit composing LOGNORMAL and PAYOFF
+# construct A operator for QAE for the payoff function
+num_qubits = linear_mapping_objective.num_qubits
+target_distribution = QuantumCircuit(num_qubits) 
+target_distribution.append(uncertainty_model, range(num_uncertainty_qubits)) 
+target_distribution.append(linear_mapping_objective, range(num_qubits))
+
+# 2.4  Set target precision and confidence level
+epsilon, alpha = 0.01, 0.05
+
+# 2.5 construct amplitude estimation 
+ae = IterativeAmplitudeEstimation(epsilon=epsilon, alpha=alpha, 
+                                  state_preparation=target_distribution,
+                                  objective_qubits=[num_uncertainty_qubits], 
+                                  post_processing=linear_mapping_objective.post_processing)
+
+result = ae.run(quantum_instance=Aer.get_backend('qasm_simulator'), shots=num_shots)
+
+
+### Step 3: OUTPUT
+
+print('___________________ parameters ___________________')
+print('S0=',S0,' vol=',vol,' r=',r,' T=',T)
+print('qubits=',num_qubits, ' shots=',num_shots)
+print('low=',low,'high=',high)
+print(' ')
+print('_______________ QIAE mean estimate _______________')
+conf_int = np.array(result['confidence_interval'])
+print('Numerical Estimate:        \t%.4f' % num_exact_value )
+print('Analytical Exact Mean:     \t%.4f' % mean)
+print('QIAE Estimated value:    \t%.4f' % (result['estimation']))
+print('QIAE Confidence interval:\t[%.4f, %.4f]' % tuple(conf_int))
+
+
+
+
+### NOTICE: The above code is inpired in the tutorial: Pricing European Call Options 
+### available in the Qiskit Documentation: 
+### https://qiskit.org/documentation/tutorials/finance/03_european_call_option_pricing.html
+### the original copyright notice  of the qiskit code is reproduced below.
+### 
+# This code is a part of Qiskit
+# © Copyright IBM 2017, 2021.
+# 
+# This code is licensed under the Apache License, Version 2.0. You may
+# obtain a copy of this license in the LICENSE.txt file in the root directory
+# of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.
+# 
+# Any modifications or derivative work s of this code must retain this
+# copyright notice, and modified files need to carry a notice indicating
+# that they have been altered from the originals.
+### 

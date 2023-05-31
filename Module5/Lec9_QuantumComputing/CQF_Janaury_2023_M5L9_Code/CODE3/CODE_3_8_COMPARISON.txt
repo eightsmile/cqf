@@ -1,0 +1,32 @@
+# CODE_3_8_COMPARISON
+
+### FIRST EXPERIMENT ###
+
+# CLASSICAL RESULTS
+pi_vector_classical = [4.0000, 2.4000, 3.1600, 3.0360, 3.1460]
+
+# QUANTUM RESULTS
+pi_vector_quantum = [4.0000, 3.2000, 3.1600, 3.2120, 3.1816]
+
+x_vector=[1,10,100,1000,10000]
+
+# PLOT: draw convergence plot
+plt.loglog(x_vector,pi_vector_classical,'r',x_vector,pi_vector_quantum,'b')
+plt.show() 
+
+
+
+### SECOND EXPERIMENT ###
+
+# CLASSICAL RESULTS
+pi_vector_classical = [4.0000, 2.4000, 3.1600, 3.0360, 3.1460]
+
+# QUANTUM RESULTS
+pi_vector_quantum = [4.0000,3.2000,2.9200,3.1080,3.1784]
+
+x_vector=[1,10,100,1000,10000]
+
+# PLOT: draw convergence plot
+plt.loglog(x_vector,pi_vector_classical,'r',x_vector,pi_vector_quantum,'b')
+plt.show() 
+

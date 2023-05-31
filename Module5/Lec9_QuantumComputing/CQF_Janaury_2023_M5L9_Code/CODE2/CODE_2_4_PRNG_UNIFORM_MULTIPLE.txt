@@ -1,0 +1,27 @@
+
+# CODE_2_4_PRNG_UNIFORM_MULTIPLE
+# vector uniform samples
+# import the required libraries  
+import random as rn
+import matplotlib.pyplot as plt  
+import numpy as np
+
+rn.seed(12345) # set seed of random sequence to 12345
+num_samples = 1000
+out_uniform = np.zeros(num_samples)
+
+# generate vector random numbers
+for k in range(num_samples):
+    out_uniform[k]=rn.random()
+
+# output individual samples (first 100)
+print(out_uniform[0:100]) 
+
+# generate PLOT 
+plt.plot(out_uniform)
+plt.show() 
+
+# generate HISTOGRAM
+plt.hist(out_uniform, bins = 10) 
+plt.show() 
+

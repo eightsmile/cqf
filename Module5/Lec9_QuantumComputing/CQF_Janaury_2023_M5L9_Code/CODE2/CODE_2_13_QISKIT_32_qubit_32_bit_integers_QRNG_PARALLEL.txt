@@ -1,0 +1,66 @@
+# CODE_2_13_QISKIT_32_qubit_32_bit_integers_QRNG_PARALLEL
+# generate 32-bit integers with 32 qubits 
+import numpy as np
+from qiskit import QuantumCircuit, execute, Aer, IBMQ
+num_shots = 3
+# Create a quantum circuit with 32 qubits and 32 classic bits
+qcircuit = QuantumCircuit(32,32)
+# Add an Hadamard gate to each qubit
+qcircuit.h(0)
+qcircuit.h(1)
+qcircuit.h(2)
+qcircuit.h(3)
+qcircuit.h(4)
+qcircuit.h(5)
+qcircuit.h(6)
+qcircuit.h(7)
+qcircuit.h(8)
+qcircuit.h(9)
+qcircuit.h(10)
+qcircuit.h(11)
+qcircuit.h(12)
+qcircuit.h(13)
+qcircuit.h(14)
+qcircuit.h(15)
+qcircuit.h(16)
+qcircuit.h(17)
+qcircuit.h(18)
+qcircuit.h(19)
+qcircuit.h(20)
+qcircuit.h(21)
+qcircuit.h(22)
+qcircuit.h(23)
+qcircuit.h(24)
+qcircuit.h(25)
+qcircuit.h(26)
+qcircuit.h(27)
+qcircuit.h(28)
+qcircuit.h(29)
+qcircuit.h(30)
+qcircuit.h(31)
+# Measure and link qubits into classical bits
+qcircuit.measure([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31])
+# Execute the circuit 
+backend = Aer.get_backend('qasm_simulator')
+result = execute(qcircuit, backend, shots=num_shots, memory = True).result()
+counts = result.get_counts(qcircuit)
+# get individual shot results
+shotlist = result.get_memory()
+
+# transform binary into integers [0,4294967295] out_int
+# transform binary into uniform [0,1] out_uniform
+out_int = np.zeros(num_shots)
+out_uniform = np.zeros(num_shots)
+
+for i in range(num_shots):
+    out_int[i]=int(str(shotlist[i]),2) # transform bits to integers
+    out_uniform[i]=int(str(shotlist[i]),2)/4294967296 # transform bits to integers
+
+# print results
+print(shotlist)
+print('')
+print(out_int)
+print('')
+print(out_uniform)
+
+print(np.mean(out_uniform))

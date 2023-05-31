@@ -1,0 +1,48 @@
+# CODE_3_2_CLASSICAL_MONTECARLO_PI_CONVERGENCE
+
+
+def classical_pi_estimate(N):
+
+    # import the required libraries  
+    import random as rn
+    import numpy as np
+    import math as m
+    rn.seed(111) # set seed of random sequence to 111
+
+    count = 0 # initialize number of samples inside circle quadrant
+    x_vector = np.zeros(N)
+    y_vector = np.zeros(N)
+    r_vector = np.zeros(N)
+
+    # Step 1: generate random scenarios
+    for i in range(N):
+        x_vector[i] = rn.random()
+        y_vector[i] = rn.random()
+
+    # Step 2: operations on each scenario
+    for i in range(N):
+        r_vector[i] = m.sqrt(x_vector[i] ** 2 + y_vector[i] ** 2)
+        if r_vector[i]<1: count=count+1
+
+    # Step 3: calculate output estimates
+    #estimate pi
+    pi_approx = 4 * count / N  
+
+    return pi_approx
+
+
+
+# import the required libraries  
+import matplotlib.pyplot as plt
+import numpy as np
+
+# TEST: compute estimates with increasing number scenarios
+pi_vector = np.zeros(5)
+for i in range(5):
+    pi_vector[i]=quantum_pi_estimate(pow(10,i))
+    print(pow(10,i),'       \t%.4f' % pi_vector[i])
+
+# PLOT: draw convergence plot
+plt.plot(pi_vector)
+plt.show() 
+

@@ -1,0 +1,41 @@
+# CODE_3_3_CLASSICAL_MONTECARLO_INTEGRATION
+
+# import the required libraries  
+import matplotlib.pyplot as plt
+import random as rn
+import numpy as np
+import math as m
+
+# INPUTS
+rn.seed(12345) # set seed of random sequence to 12345
+N = 100 # number of simulations
+a = -2 # start integration interval
+b = +5 # end integration interval
+x_vector = np.zeros(N)
+f_vector = np.zeros(N)
+
+def f_integrand(x):
+    result = -pow(x,3) + 5*pow(x,2) - x + 17 # function to integrate
+    return result
+
+
+# Step 1: generate random scenarios in [a,b]
+for i in range(N):
+    x_vector[i] = (b-a)*rn.random() + a
+
+
+# Step 2: operations on each scenario
+for i in range(N):
+    f_vector[i] = f_integrand(x_vector[i])
+
+
+# Step 3: calculate output estimates
+integral_estimate = (b-a)/N*sum(f_vector)
+print(integral_estimate)
+
+
+# PLOT draw function and random sample points
+x = np.linspace(a, b, 100)
+plt.plot(x, f_integrand(x)) # function
+plt.scatter(x_vector, f_vector, alpha=.2) # random samples
+plt.show() 

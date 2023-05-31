@@ -1,0 +1,25 @@
+# CODE 4.8 CLASSIC PW PAYOFF 
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+K = 2
+x = np.linspace(0, 4, 50)
+y = np.piecewise(x, [x <= K, x > K], [lambda x: x, lambda x: 2])
+plt.plot(x, y, linewidth=2, color='r')
+plt.axis('tight')
+plt.axis('square')
+plt.xlabel('x: independent variable')
+plt.ylabel('G(x): piece-wise linear function')
+plt.show()
+
+plt.plot(x, y, linewidth=2, color='r')
+plt.axis('tight')
+plt.axis('square')
+plt.xlabel('x: independent variable')
+plt.ylabel('G(x): piece-wise linear function')
+plt.vlines(-0.1, -0.1, 2.1, linestyle="dashed")
+plt.vlines(+2.0, -0.1, 2.1, linestyle="dashed")
+plt.hlines(+2.1, 0, 2, linestyle="dashed")
+plt.hlines(-0.05, 0, 2, linestyle="dashed")
+plt.show()

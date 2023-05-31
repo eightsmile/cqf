@@ -1,0 +1,31 @@
+
+# CODE_2_6_PRNG_GAUSS_MULTIPLE
+# vector gaussian samples
+# import the required libraries  
+import random as rn
+import matplotlib.pyplot as plt  
+import numpy as np
+
+rn.seed(12345) # set seed of random sequence to 12345
+num_samples = 1000
+out_gauss = np.zeros(num_samples)
+
+# generate vector random numbers
+for k in range(num_samples):
+    out_gauss[k]=rn.gauss(0, 1)
+
+# output individual samples (first 100)
+print(out_gauss[0:100]) 
+
+# generate PLOT 
+plt.plot(out_gauss)  
+plt.show() 
+
+# generate HISTOGRAM
+plt.hist(out_gauss, bins = 50) 
+plt.show() 
+
+
+
+
+

@@ -1,0 +1,58 @@
+# CODE_2_15_TESTS_function gauss_8bits
+
+def gauss_8bits():
+    import numpy as np
+    from scipy.stats import norm
+    from qiskit import QuantumCircuit, execute, Aer, IBMQ
+    num_bits = 8
+    num_samples = 1
+    num_shots = num_bits * num_samples
+    qcircuit = QuantumCircuit(1,1)
+    qcircuit.h(0)
+    qcircuit.measure([0],[0])
+    backend = Aer.get_backend('qasm_simulator')
+    result = execute(qcircuit, backend, shots=num_shots, memory = True).result()
+    counts = result.get_counts(qcircuit)
+    shotlist = result.get_memory()
+    a = shotlist
+    b=''.join(a)
+    c = int(str(b),2)
+    out_int=c
+    out_uniform=out_int/256 
+    out_gauss=norm.ppf(out_uniform) 
+    if out_uniform==0 or out_uniform==1: out_gauss=gauss_8bits()
+    result = out_gauss
+    return result
+
+
+# TEST: single gauss sample 
+print(gauss_8bits()) 
+print(gauss_8bits()) 
+print(gauss_8bits()) 
+print(gauss_8bits()) 
+print(gauss_8bits()) 
+print('') 
+
+
+# TEST: vector gauss samples
+# import the required libraries  
+import matplotlib.pyplot as plt  
+import numpy as np
+
+num_samples = 1000
+out_gauss = np.zeros(num_samples)
+
+# generate vector random numbers
+for k in range(num_samples):
+    out_gauss[k]=gauss_8bits()
+
+# output individual samples (first 100)
+print(out_gauss[0:100]) 
+
+# generate PLOT 
+plt.plot(out_gauss)
+plt.show() 
+
+# generate HISTOGRAM
+plt.hist(out_gauss, bins = 30) 
+plt.show() 

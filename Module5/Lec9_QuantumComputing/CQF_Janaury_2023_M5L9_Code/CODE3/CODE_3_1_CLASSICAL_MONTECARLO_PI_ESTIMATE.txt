@@ -1,0 +1,36 @@
+# CODE_3_1_CLASSICAL_MONTECARLO_PI_ESTIMATE
+
+# import the required libraries  
+import matplotlib.pyplot as plt
+import random as rn
+import numpy as np
+import math as m
+rn.seed(12345) # set seed of random sequence to 12345
+
+N = 100 # number of simulations
+count = 0 # initialize number of samples inside circle quadrant
+x_vector = np.zeros(N)
+y_vector = np.zeros(N)
+r_vector = np.zeros(N)
+
+# Step 1: generate random scenarios
+for i in range(N):
+    x_vector[i] = rn.random()
+    y_vector[i] = rn.random()
+
+# Step 2: operations on each scenario
+for i in range(N):
+    r_vector[i] = m.sqrt(x_vector[i] ** 2 + y_vector[i] ** 2)
+    if r_vector[i]<1: count=count+1
+
+# Step 3: calculate output estimates
+
+# plot individual radii (first 100)
+print(r_vector[0:100]) 
+plt.plot(r_vector[0:100])
+plt.show() 
+
+#estimate pi
+pi_approx = 4 * count / N  
+print('Pi estimate: \t%.4f' % pi_approx)
+

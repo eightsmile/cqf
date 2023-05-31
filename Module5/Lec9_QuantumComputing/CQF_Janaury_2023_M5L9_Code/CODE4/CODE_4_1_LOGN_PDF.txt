@@ -1,0 +1,27 @@
+# CODE 4.1 Lognormal distribution PDF graph
+import numpy as np
+import matplotlib.pyplot as plt
+
+# STEP 1: INPUTS 
+mu, sigma = 1.0, 0.5
+
+# STEP 2: PROCESS 
+x = np.linspace(0.1, 10, 100)
+pdf = (np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))
+       / (x * sigma * np.sqrt(2 * np.pi)))
+exact_mean = np.exp(mu + sigma**2/2)
+
+# STEP 3: OUTPUTS 
+plt.vlines(exact_mean, 0, 1.5*np.max(pdf), linestyle="dashed")
+plt.plot(x, pdf, linewidth=2, color='r')
+plt.axis('tight')
+plt.show()
+
+print('___________ parameters ___________')
+print('mu = ',mu, ' sigma = ',sigma)
+print(' ')
+print('____________ results _____________')
+print('exact_mean = ',exact_mean)
+print('__________________________________')
+
+

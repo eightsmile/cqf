@@ -1,0 +1,69 @@
+# CODE 4_9 Q PAYOFF
+import matplotlib.pyplot as plt
+import numpy as np
+from qiskit import Aer, QuantumCircuit
+from qiskit.circuit.library import LinearAmplitudeFunction
+
+# Step 1: INPUTS 
+
+# number of qubits to represent payoff H(x)
+num_qubits = 5
+# lowest and highest value considered for domain
+low, high = 0.0, 4.0
+# linear function parameters H(x)=alpha*x + beta for payoff
+alpha,beta = 0,1
+
+# input parameters linear function in Qiskit
+c_approx = 0.25 # scaling factor
+breakpoints = [low]
+slopes = [beta]
+offsets = [alpha]
+f_min = low
+f_max = high
+
+### Step 2: quantum circuit for linear function in Qiskit
+linear_mapping_objective = LinearAmplitudeFunction(
+    num_qubits, 
+    slope=slopes,
+    offset=offsets,
+    domain=(low, high),
+    image=(f_min, f_max),
+    breakpoints=breakpoints,
+    rescaling_factor=c_approx
+)
+
+### Step 3: Output
+
+# plot linear function
+x = np.linspace(low,high,50)
+plt.plot(x, alpha + beta*x, linewidth=2, color='r')
+plt.axis('tight')
+plt.axis('square')
+plt.xlim(0, 4)
+plt.ylim(0, 4)
+plt.xlabel('x: independent variable')
+plt.ylabel('H(x): piece-wise linear function')
+plt.show()
+
+# characteristics linear function in Qiskit
+linear_mapping_objective.data
+
+
+### NOTICE: The above code is inpired in the tutorial: Pricing European Call Options 
+### available in the Qiskit Documentation: 
+### https://qiskit.org/documentation/tutorials/finance/03_european_call_option_pricing.html
+### the original copyright notice  of the qiskit code is reproduced below.
+### 
+# This code is a part of Qiskit
+# © Copyright IBM 2017, 2021.
+# 
+# This code is licensed under the Apache License, Version 2.0. You may
+# obtain a copy of this license in the LICENSE.txt file in the root directory
+# of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.
+# 
+# Any modifications or derivative work s of this code must retain this
+# copyright notice, and modified files need to carry a notice indicating
+# that they have been altered from the originals.
+### 
+
+

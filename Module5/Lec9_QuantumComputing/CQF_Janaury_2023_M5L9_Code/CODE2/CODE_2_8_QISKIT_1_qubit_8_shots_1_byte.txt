@@ -1,0 +1,35 @@
+# CODE_2_8_QISKIT_1_qubit_8_shots_1_byte
+# QISKIT generate a byte (8-bit binary) with 1 qubit 8 shots
+
+from qiskit import QuantumCircuit, execute, Aer, IBMQ
+
+# Create a quantum circuit with 1 qubits and 1 classic bits
+qcircuit = QuantumCircuit(1,1)
+
+# Add an Hadamard gate to the qubit
+qcircuit.h(0)
+
+# Measure and link qubit into classical bit
+qcircuit.measure([0],[0])
+
+# Execute the circuit 
+backend = Aer.get_backend('qasm_simulator')
+result = execute(qcircuit, backend, shots=8, memory = True).result()
+counts = result.get_counts(qcircuit)
+
+# Get individual shot results
+shotlist = result.get_memory()
+
+# Join individual shot results to form byte as 8-bit binary 
+shotlist_as_byte =''.join(shotlist)
+
+# Transform binary to decimal number
+shotlist_as_decimal = int(str(shotlist_as_byte),2)
+
+# Output
+print(shotlist)
+print(shotlist_as_byte)
+print(shotlist_as_decimal)
+
+
+

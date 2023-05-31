@@ -1,0 +1,17 @@
+
+
+# CODE_2_5_PRNG_GAUSS_SINGLE
+# single normal standard sample [-inf,+inf]
+# import the random module 
+import random as rn
+rn.seed(123) # set seed of random sequence to 123
+# using the gauss() method obtain five samples
+print(rn.gauss(0, 1)) 
+print(rn.gauss(0, 1)) 
+print(rn.gauss(0, 1)) 
+print(rn.gauss(0, 1)) 
+print(rn.gauss(0, 1)) 
+
+
+
+

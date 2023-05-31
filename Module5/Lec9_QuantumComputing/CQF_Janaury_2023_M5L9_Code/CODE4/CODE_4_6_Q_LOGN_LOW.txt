@@ -1,0 +1,48 @@
+# CODE_4_6_QUANTUM_LOGNORMAL_LOW
+import matplotlib.pyplot as plt
+import numpy as np
+from qiskit import Aer, QuantumCircuit
+from qiskit.aqua.algorithms import IterativeAmplitudeEstimation
+from qiskit.circuit.library import LogNormalDistribution
+
+### Step 1: INPUT
+
+# number of qubits to represent the uncertainty model (LOGNORMAL)
+num_uncertainty_qubits = 3
+
+# parameters for GBM
+S0, T, vol, r = 1, 1, 0.30, 0.1
+
+# resulting parameters for LOGNORMAL 
+mu = ((r - 0.5 * vol**2) * T + np.log(S0))
+sigma = vol * np.sqrt(T)
+
+# lowest and highest value considered for the spot price
+low, high = 0.1, 3.0
+
+### Step 2: Define the uncertainty model LOGNORMAL 
+uncertainty_model = LogNormalDistribution(num_uncertainty_qubits, mu=mu, sigma=sigma**2, bounds=(low, high))
+
+### Step 3: OUTPUT 
+# plot probability distribution
+x = uncertainty_model.values
+y = uncertainty_model.probabilities
+plt.bar(x, y, width=0.08, alpha=0.7)
+
+pdf = (np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))
+       / (x * sigma * np.sqrt(2 * np.pi)))
+plt.plot(x, pdf/sum(pdf), linewidth=2, color='r')
+plt.axis('tight')
+plt.show()
+
+print('____________ parameters ____________')
+print('S0=',S0,' vol=',vol,' r=',r,' T=',T)
+print('mu = ',mu, ' sigma = ',sigma)
+print('___________ quantum LOGN ___________')
+print('number qubits  = ',num_uncertainty_qubits)
+print('resulting grid = ',2**num_uncertainty_qubits)
+print('____________________________________')
+
+
+
+

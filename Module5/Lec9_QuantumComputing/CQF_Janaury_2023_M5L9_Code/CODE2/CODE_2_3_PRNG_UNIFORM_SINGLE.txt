@@ -1,0 +1,13 @@
+
+# CODE_2_3_PRNG_UNIFORM_SINGLE
+# single uniform sample between [0,1]
+# import the random module 
+import random as rn
+rn.seed(12345) # set seed of random sequence to 12345
+# using the random() method obtain five samples
+print(rn.random()) 
+print(rn.random()) 
+print(rn.random()) 
+print(rn.random()) 
+print(rn.random()) 
+

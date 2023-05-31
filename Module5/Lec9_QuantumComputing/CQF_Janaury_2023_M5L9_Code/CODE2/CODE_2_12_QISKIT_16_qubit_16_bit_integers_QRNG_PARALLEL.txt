@@ -1,0 +1,60 @@
+# CODE_2_12_QISKIT_16_qubit_16_bit_integers_QRNG_PARALLEL
+# generate 16-bit integers with 16 qubits 
+import numpy as np
+from scipy.stats import norm
+from qiskit import QuantumCircuit, execute, Aer, IBMQ
+num_shots = 3
+# Create a quantum circuit with 16 qubits and 16 classic bits
+qcircuit = QuantumCircuit(16,16)
+# Add an Hadamard gate to each qubit
+qcircuit.h(0)
+qcircuit.h(1)
+qcircuit.h(2)
+qcircuit.h(3)
+qcircuit.h(4)
+qcircuit.h(5)
+qcircuit.h(6)
+qcircuit.h(7)
+qcircuit.h(8)
+qcircuit.h(9)
+qcircuit.h(10)
+qcircuit.h(11)
+qcircuit.h(12)
+qcircuit.h(13)
+qcircuit.h(14)
+qcircuit.h(15)
+# Measure and link qubits into classical bits
+qcircuit.measure([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+# Execute the circuit 
+backend = Aer.get_backend('qasm_simulator')
+result = execute(qcircuit, backend, shots=num_shots, memory = True).result()
+counts = result.get_counts(qcircuit)
+# get individual shot results
+shotlist = result.get_memory()
+
+# transform binary into integers [0,65535] out_int
+# transform integer into uniform [0,1] out_uniform
+# transform uniform into gaussian [-inf,+inf+]
+out_int = np.zeros(num_shots)
+out_uniform = np.zeros(num_shots)
+out_gauss = np.zeros(num_shots)
+
+for i in range(num_shots):
+    out_int[i]=int(str(shotlist[i]),2) # 
+    out_uniform[i]=out_int[i]/65535 # 
+    out_gauss[i]=norm.ppf(out_uniform[i]) # 
+
+
+# print results
+print(shotlist)
+print('')
+print(out_int)
+print('')
+print(out_uniform)
+print('')
+print(out_gauss)
+
+print(np.mean(out_uniform))
+print(np.mean(out_gauss))
+
+

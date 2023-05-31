@@ -1,0 +1,36 @@
+# CODE 4.2 Lognormal distribution MC sampling
+import numpy as np
+import matplotlib.pyplot as plt
+
+# STEP 1: inputs
+mu, sigma = 1.0, 0.5
+
+# STEP 2: samples from Lognormal distribution 
+s = np.random.lognormal(mu, sigma, 1000)
+count, bins, ignored = plt.hist(s, 100, density=True, align='mid',alpha=0.5)
+
+# STEP 3: generate Lognormal pdf
+x = np.linspace(0.1, 10, 100)
+pdf = (np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))
+       / (x * sigma * np.sqrt(2 * np.pi)))
+exact_mean = np.exp(mu + sigma**2/2)
+
+# STEP 4: generate plots
+plt.vlines(exact_mean, 0, 1.5*np.max(pdf), linestyle="dashed")
+plt.plot(x, pdf, linewidth=2, color='r')
+plt.axis('tight')
+plt.show()
+
+print('___________ parameters ___________')
+print('mu = ',mu, ' sigma = ',sigma)
+print(' ')
+print('____________ results _____________')
+print('Exact_mean      = ',exact_mean)
+print('MC_sample_mean  = ',np.mean(s))
+print('__________________________________')
+
+
+
+
+
+
