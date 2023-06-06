@@ -47,7 +47,7 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec5 - Supervised Learning II
 - Lec6 - Decision Tree & Ensemble Learning
 
-## Module 5 - Panos, Kannan
+## Module 5 - Panos, Kannan, Miquel
 
 - Lec1 - Unsupervised Learning I
 - Lec2 - Unsupervised Learning II 
