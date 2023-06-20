@@ -58,3 +58,14 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec7 - AI Based Algo Trading Strategies
 - Lec8 - Practical Machine Learning Case Studies for Finance
 - Lec9 - Quantum Computing
+
+## Module 6 
+
+- Lec1 - Fixed Income Products & Analysis
+- Lec2 - Stochastic Interest Rate Modelling
+- Lec3 - Calibration & Data Analysis
+- Lec4 - Probabilistic Methods for Interest Rates
+- Lec5 - Heath Jarrow & Morton Model
+- Lec6 - LIBOR Market Model
+- Lec7 - Further Monte Carlo
+- Lec8 - Cointegration for Trading
