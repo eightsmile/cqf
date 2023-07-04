@@ -12,11 +12,10 @@ However, my thought is the equation should be, $ 2log(v\sqrt{\delta t}) + 2\beta
 
 By the way, may I also ask why a logritham shell be taken? or Shell I ask why we consider the RHS to be exponential of a linearity?
 
-
-
 Best wishes,
 
 Fanyu
 
+---
 
-
+The Anser from Riaz is Yes.
