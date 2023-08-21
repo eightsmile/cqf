@@ -69,3 +69,8 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec6 - LIBOR Market Model
 - Lec7 - Further Monte Carlo
 - Lec8 - Cointegration for Trading
+- Lec9 - Credit Default Swaps
+- Lec10 - Credit Derivates & Structural Models
+- Lec11 - Intensity Models
+- Lec12 CDO & Correlation Sensitivity
+- Lec13 - X Valuation Adjustment
