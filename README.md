@@ -1,6 +1,8 @@
 # cqf
 
-Welcome to visit my site: https://eightsmilefy.com/?cat=26. 
+Thank you for visiting my page, I have passed the CQF with Distinction for Jan 2023 program. The final project would be shared on there later.
+
+Welcome to visit my site: https://fanyuzhao.com/?page_id=3911. 
 
 Posts may not be kept updated, in that it seems the website cannot show `.md` and `jupyter notebook` well. Still, welcome to vista my website for some insights about Econ and my learning & ideas.
 
@@ -69,3 +71,8 @@ Both my website and GitHub cannot  show those Latex formula correctly. If that s
 - Lec6 - LIBOR Market Model
 - Lec7 - Further Monte Carlo
 - Lec8 - Cointegration for Trading
+- Lec9 - Credit Default Swaps
+- Lec10 - Credit Derivatives & Structural Models
+- Lec11 - Intensity Models
+- Lec12 - CDO & Correlation Sensitivity
+- Lec13 - X Valuation Adjustment
