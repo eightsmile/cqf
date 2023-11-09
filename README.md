@@ -1,6 +1,6 @@
 # cqf
 
-Thank you for visiting my page, I have passed the CQF with Distinction for Jan 2023 program. The final project would be shared on there later.
+Thank you for visiting my page, I have *passed the CQF with Distinction* for Jan 2023 program. Assignments are shared now.
 
 Welcome to visit my site: https://fanyuzhao.com/?page_id=3911. 
 
