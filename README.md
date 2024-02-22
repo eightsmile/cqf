@@ -6,7 +6,7 @@ Welcome to visit my site: https://fanyuzhao.com/?page_id=3911.
 
 Posts may not be kept updated, in that it seems the website cannot show `.md` and `jupyter notebook` well. Still, welcome to visit my website for some insights about Econ and my learning & ideas.
 
-Both my website and GitHub cannot  show those Latex formula correctly. If that showing bother you, please clone the .md file yourself. Hope that would be helpful.
+Both my website and GitHub cannot  show those Latex formula correctly. If that showing bothered you, please clone the .md file. Hope this repo would be helpful.
 
 ## Module 1 - Paul & Riaz
 - Lec1 - Random Behaviour of Assets
