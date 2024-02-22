@@ -4,7 +4,7 @@ Thank you for visiting my page, I have *passed the CQF with Distinction* for Jan
 
 Welcome to visit my site: https://fanyuzhao.com/?page_id=3911. 
 
-Posts may not be kept updated, in that it seems the website cannot show `.md` and `jupyter notebook` well. Still, welcome to vista my website for some insights about Econ and my learning & ideas.
+Posts may not be kept updated, in that it seems the website cannot show `.md` and `jupyter notebook` well. Still, welcome to visit my website for some insights about Econ and my learning & ideas.
 
 Both my website and GitHub cannot  show those Latex formula correctly. If that showing bother you, please clone the .md file yourself. Hope that would be helpful.
 
